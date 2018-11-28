@@ -1,4 +1,5 @@
 import React from 'react'
+import Order from './Order'
 
 const Side = (props) => {
   return (
