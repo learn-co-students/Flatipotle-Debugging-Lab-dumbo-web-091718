@@ -41,7 +41,7 @@ class Order extends Component {
               <p>No sides</p>
           }
 
-          { /* this is just a shortcut to writing this.state.isClicked ? <Side sides={this.props.sides} /> : null */ }
+          { /* Done this is just a shortcut to writing this.state.isClicked ? <Side sides={this.props.sides} /> : null */ }
           { this.state.isClicked && <Side sides={this.props.sides} /> }
 
         </div>
