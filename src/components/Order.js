@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Side from "./Side"
 
 class Order extends Component {
   state = {
@@ -6,7 +7,7 @@ class Order extends Component {
   }
 
   handleClick = () => {
-    this.state.isClicked = !this.state.isClicked
+    this.setState({ isClicked: !this.setState.isClicked})
   }
 
   render() {
@@ -17,17 +18,17 @@ class Order extends Component {
         </div>
         <div className="content">
           <b>Protein:</b><br />
-          { this.props.protein.length > 0 ? this.props.protein.join(", ") : "None" }
+          { this.props.attributes.protein.length > 0 ? this.props.attributes.protein.join(", ") : "None" }
           <br />
           <b>Fillings:</b><br />
-          { this.props.fillings.length > 0 ? this.props.fillings.join(", ") : "None" }
+          { this.props.attributes.fillings.length > 0 ? this.props.attributes.fillings.join(", ") : "None" }
           <br />
           <b>Toppings:</b><br />
-          { this.props.toppings.length > 0 ? this.props.toppings.join(", ") : "None" }
+          { this.props.attributes.toppings.length > 0 ? this.props.attributes.toppings.join(", ") : "None" }
           <br />
         </div>
         <div className="extra content">
-          { this.props.sides.length > 0 ?
+          { this.props.attributes.sides.length > 0 ?
               <button className="ui button small" onClick={ this.handleClick }>
                 View Sides
               </button>
@@ -36,7 +37,7 @@ class Order extends Component {
           }
 
           { /* this is just a shortcut to writing this.state.isClicked ? <Side sides={this.props.sides} /> : null */ }
-          { this.state.isClicked && <Side sides={this.props.sides} /> }
+          { this.state.isClicked && <Side sides={this.props.attributes.sides} /> }
 
         </div>
       </div>
